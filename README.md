@@ -1,57 +1,50 @@
-# 🧪 Data Alchemist
+#  Data Alchemist (by Sagnik Chowdhury)
 
 > **Transform your raw data into intelligent insights with AI-powered analysis**
 
 Data Alchemist is a sophisticated web application that combines advanced data validation, AI-powered analysis, and intelligent business rule management to help organizations optimize their workforce allocation and task management processes.
 
-## 📸 Screenshots
+##  Screenshots
 
-### Smart Data Analytics & Insights Dashboard
+### Smart Data Analytics & Insights Dashboard (Special feature!!)
 ![Data Analytics Dashboard](./screenshots/analytics-dashboard.png)
 *AI-powered insights with real-time bottleneck detection and optimization recommendations*
 
-### Data Upload & Validation
-![Data Upload Interface](./screenshots/data-upload.png)
-*Drag-and-drop interface with comprehensive data validation*
 
-### Business Rules Management
-![Rules Management](./screenshots/rules-management.png)
-*Intelligent rule creation and management system*
+##  Key Features
 
-## ✨ Key Features
-
-### 🚀 **Smart Data Analytics & Insights** ⭐ *Special Feature*
+###  **Smart Data Analytics & Insights** *Special Feature*
 - **AI-Powered Analysis**: Generate intelligent insights from your data using Google's Gemini AI
 - **Bottleneck Detection**: Automatically identify workflow bottlenecks and capacity issues
 - **Optimization Recommendations**: Get actionable suggestions to improve efficiency
 - **Risk Assessment**: Proactive identification of potential risks and mitigation strategies
 - **Interactive Dashboard**: Beautiful, collapsible sections with real-time statistics
 
-### 📊 **Multi-Format Data Support**
+###  **Multi-Format Data Support**
 - **CSV & Excel Import**: Support for `.csv` and `.xlsx` file formats
 - **Real-time Validation**: Instant data quality checks and error reporting
 - **Data Grid Editing**: In-place editing with live validation
 - **Export Capabilities**: Generate configuration files and reports
 
-### 🤖 **AI-Powered Features**
+###  **AI-Powered Features**
 - **Natural Language Queries**: Ask questions about your data in plain English
 - **Intelligent Rule Generation**: Convert natural language descriptions to business rules
 - **Auto Error Correction**: AI suggests fixes for data quality issues
 - **Data Modification**: Modify data using natural language instructions
 
-### 🔧 **Business Rules Engine**
+###  **Business Rules Engine**
 - **Multiple Rule Types**: Support for co-run, slot-restriction, load-limit, and more
 - **Visual Rule Builder**: Interactive forms for creating complex business rules
 - **Rule Recommendations**: AI-suggested rules based on data patterns
 - **Conflict Detection**: Automatic identification of conflicting rules
 
-### ⚖️ **Advanced Prioritization**
+###  **Advanced Prioritization**
 - **Multi-Criteria Optimization**: Balance multiple objectives simultaneously
 - **Preset Profiles**: Quick setup with predefined optimization strategies
 - **Real-time Adjustments**: Dynamic weight adjustments with instant feedback
 - **Custom Weightings**: Fine-tune prioritization based on business needs
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Core Components
 - **Frontend**: React 19 with TypeScript for type-safe development
@@ -66,7 +59,7 @@ Data Alchemist is a sophisticated web application that combines advanced data va
 - **Task Scheduling**: Duration-aware task scheduling with concurrency controls
 - **Validation Engine**: Comprehensive data quality assurance
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Node.js 18+ 
@@ -100,14 +93,14 @@ Data Alchemist is a sophisticated web application that combines advanced data va
 5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📖 Usage Guide
+##  Usage Guide
 
 ### 1. **Data Upload**
 - Drag and drop CSV/Excel files or use the file picker
 - Supported formats: Clients, Workers, Tasks data
 - Real-time validation with detailed error reporting
 
-### 2. **AI Analytics** ⭐
+### 2. **AI Analytics** 
 - Click "Generate Smart Insights" to analyze your data
 - Review key insights, bottlenecks, and opportunities
 - Explore risk alerts and mitigation strategies
@@ -126,14 +119,14 @@ Data Alchemist is a sophisticated web application that combines advanced data va
 - Use preset profiles or create custom configurations
 - Balance client satisfaction with operational efficiency
 
-## 📁 Sample Data
+##  Sample Data
 
 Get started quickly with our sample datasets:
 - [Sample Clients Data](https://docs.google.com/spreadsheets/d/1L5zQg_jzD8fP_zD_vL_Wh_example/edit)
 - [Sample Workers Data](https://docs.google.com/spreadsheets/d/17Bp_W3u8Ff_keX9EYbx9xE14UolDmsAVyD4u3hzkuI8/edit)
 - [Sample Tasks Data](https://docs.google.com/spreadsheets/d/1example_tasks_data/edit)
 
-## 🔧 Configuration
+##  Configuration
 
 ### Environment Variables
 ```bash
@@ -150,7 +143,7 @@ The application expects specific column structures:
 
 **Tasks**: `TaskID`, `TaskName`, `Category`, `Duration`, `RequiredSkills`, `PreferredPhases`, `MaxConcurrent`
 
-## 🛠️ Built With
+##  Built With
 
 - **React 19** - Modern React with latest features
 - **TypeScript** - Type-safe development
@@ -160,7 +153,7 @@ The application expects specific column structures:
 - **XLSX** - Excel file processing
 - **React Toastify** - User notifications
 
-## 📈 Performance Features
+##  Performance Features
 
 - **Optimized Rendering**: Smart re-rendering with React optimization
 - **Type Safety**: Comprehensive TypeScript coverage (0 any types!)
@@ -168,7 +161,7 @@ The application expects specific column structures:
 - **Memory Efficient**: Optimized data processing for large datasets
 - **Responsive Design**: Mobile-friendly interface
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -176,30 +169,10 @@ The application expects specific column structures:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
-
-- 📧 Email: support@dataalchemist.com
-- 💬 Issues: [GitHub Issues](https://github.com/yourusername/data-alchemist/issues)
-- 📖 Documentation: [Wiki](https://github.com/yourusername/data-alchemist/wiki)
-
-## 🙏 Acknowledgments
-
-- Google Gemini AI for powering our intelligent features
-- Material-UI team for the excellent component library
-- Open source community for the amazing tools and libraries
 
 ---
 
-<div align="center">
-
-**⭐ Star this repository if you found it helpful! ⭐**
-
-Made with ❤️ by [Your Name]
-
-[🌐 Live Demo](https://your-demo-url.com) • [📖 Documentation](https://docs.your-app.com) • [🐛 Report Bug](https://github.com/yourusername/data-alchemist/issues)
-
-</div>

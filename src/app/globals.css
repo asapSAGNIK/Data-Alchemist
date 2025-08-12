@@ -24,3 +24,31 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.error-cell {
+  background-color: #ffe0e0 !important;
+  color: #d32f2f !important;
+}
+
+.MuiDataGrid-root {
+  background-color: #2e2e2e !important; /* Darker background for visibility */
+  color: white !important; /* Ensure text is visible */
+  border: 1px solid #555 !important;
+}
+
+.MuiDataGrid-columnHeader, .MuiDataGrid-footerContainer {
+  background-color: #444 !important; /* Darker headers and footer */
+  color: white !important;
+}
+
+.MuiDataGrid-cell {
+  color: white !important; /* Ensure cell text is white */
+}
+
+.MuiTablePagination-root {
+  color: white !important; /* Pagination text */
+}
+
+.MuiSvgIcon-root {
+  color: white !important; /* Icons like sort arrows, pagination arrows */
+}

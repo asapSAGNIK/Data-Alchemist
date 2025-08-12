@@ -1,36 +1,205 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧪 Data Alchemist
 
-## Getting Started
+> **Transform your raw data into intelligent insights with AI-powered analysis**
 
-First, run the development server:
+Data Alchemist is a sophisticated web application that combines advanced data validation, AI-powered analysis, and intelligent business rule management to help organizations optimize their workforce allocation and task management processes.
 
+## 📸 Screenshots
+
+### Smart Data Analytics & Insights Dashboard
+![Data Analytics Dashboard](./screenshots/analytics-dashboard.png)
+*AI-powered insights with real-time bottleneck detection and optimization recommendations*
+
+### Data Upload & Validation
+![Data Upload Interface](./screenshots/data-upload.png)
+*Drag-and-drop interface with comprehensive data validation*
+
+### Business Rules Management
+![Rules Management](./screenshots/rules-management.png)
+*Intelligent rule creation and management system*
+
+## ✨ Key Features
+
+### 🚀 **Smart Data Analytics & Insights** ⭐ *Special Feature*
+- **AI-Powered Analysis**: Generate intelligent insights from your data using Google's Gemini AI
+- **Bottleneck Detection**: Automatically identify workflow bottlenecks and capacity issues
+- **Optimization Recommendations**: Get actionable suggestions to improve efficiency
+- **Risk Assessment**: Proactive identification of potential risks and mitigation strategies
+- **Interactive Dashboard**: Beautiful, collapsible sections with real-time statistics
+
+### 📊 **Multi-Format Data Support**
+- **CSV & Excel Import**: Support for `.csv` and `.xlsx` file formats
+- **Real-time Validation**: Instant data quality checks and error reporting
+- **Data Grid Editing**: In-place editing with live validation
+- **Export Capabilities**: Generate configuration files and reports
+
+### 🤖 **AI-Powered Features**
+- **Natural Language Queries**: Ask questions about your data in plain English
+- **Intelligent Rule Generation**: Convert natural language descriptions to business rules
+- **Auto Error Correction**: AI suggests fixes for data quality issues
+- **Data Modification**: Modify data using natural language instructions
+
+### 🔧 **Business Rules Engine**
+- **Multiple Rule Types**: Support for co-run, slot-restriction, load-limit, and more
+- **Visual Rule Builder**: Interactive forms for creating complex business rules
+- **Rule Recommendations**: AI-suggested rules based on data patterns
+- **Conflict Detection**: Automatic identification of conflicting rules
+
+### ⚖️ **Advanced Prioritization**
+- **Multi-Criteria Optimization**: Balance multiple objectives simultaneously
+- **Preset Profiles**: Quick setup with predefined optimization strategies
+- **Real-time Adjustments**: Dynamic weight adjustments with instant feedback
+- **Custom Weightings**: Fine-tune prioritization based on business needs
+
+## 🏗️ Architecture
+
+### Core Components
+- **Frontend**: React 19 with TypeScript for type-safe development
+- **UI Framework**: Material-UI with custom dark theme
+- **Data Processing**: Advanced CSV/Excel parsing with validation
+- **AI Integration**: Google Gemini AI for intelligent analysis
+- **State Management**: React hooks with optimized re-rendering
+
+### Data Models
+- **Client Management**: Priority-based client data with JSON attributes
+- **Worker Allocation**: Skill-based worker management with capacity planning
+- **Task Scheduling**: Duration-aware task scheduling with concurrency controls
+- **Validation Engine**: Comprehensive data quality assurance
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+- Google AI API key
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/data-alchemist.git
+   cd data-alchemist
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+   ```bash
+   # Create .env.local file
+   echo "GOOGLE_API_KEY=your_google_ai_api_key_here" > .env.local
+   ```
+
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📖 Usage Guide
+
+### 1. **Data Upload**
+- Drag and drop CSV/Excel files or use the file picker
+- Supported formats: Clients, Workers, Tasks data
+- Real-time validation with detailed error reporting
+
+### 2. **AI Analytics** ⭐
+- Click "Generate Smart Insights" to analyze your data
+- Review key insights, bottlenecks, and opportunities
+- Explore risk alerts and mitigation strategies
+
+### 3. **Natural Language Queries**
+- Ask questions like "How many high-priority clients do we have?"
+- Get instant answers across all your datasets
+
+### 4. **Business Rules**
+- Create rules using the visual builder or natural language
+- Set up co-run requirements, load limits, and slot restrictions
+- Get AI-powered rule recommendations
+
+### 5. **Prioritization**
+- Configure optimization weights for different criteria
+- Use preset profiles or create custom configurations
+- Balance client satisfaction with operational efficiency
+
+## 📁 Sample Data
+
+Get started quickly with our sample datasets:
+- [Sample Clients Data](https://docs.google.com/spreadsheets/d/1L5zQg_jzD8fP_zD_vL_Wh_example/edit)
+- [Sample Workers Data](https://docs.google.com/spreadsheets/d/17Bp_W3u8Ff_keX9EYbx9xE14UolDmsAVyD4u3hzkuI8/edit)
+- [Sample Tasks Data](https://docs.google.com/spreadsheets/d/1example_tasks_data/edit)
+
+## 🔧 Configuration
+
+### Environment Variables
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+GOOGLE_API_KEY=your_google_gemini_api_key
+NODE_ENV=development
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Data Schema
+The application expects specific column structures:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Clients**: `ClientID`, `ClientName`, `PriorityLevel`, `RequestedTaskIDs`, `GroupTag`, `AttributesJSON`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Workers**: `WorkerID`, `WorkerName`, `Skills`, `AvailableSlots`, `MaxLoadPerPhase`, `WorkerGroup`, `QualificationLevel`
 
-## Learn More
+**Tasks**: `TaskID`, `TaskName`, `Category`, `Duration`, `RequiredSkills`, `PreferredPhases`, `MaxConcurrent`
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Built With
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **React 19** - Modern React with latest features
+- **TypeScript** - Type-safe development
+- **Material-UI** - Professional UI components
+- **Google Gemini AI** - Advanced AI capabilities
+- **Papa Parse** - Robust CSV parsing
+- **XLSX** - Excel file processing
+- **React Toastify** - User notifications
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📈 Performance Features
 
-## Deploy on Vercel
+- **Optimized Rendering**: Smart re-rendering with React optimization
+- **Type Safety**: Comprehensive TypeScript coverage (0 any types!)
+- **Error Boundaries**: Graceful error handling throughout
+- **Memory Efficient**: Optimized data processing for large datasets
+- **Responsive Design**: Mobile-friendly interface
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🤝 Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+- 📧 Email: support@dataalchemist.com
+- 💬 Issues: [GitHub Issues](https://github.com/yourusername/data-alchemist/issues)
+- 📖 Documentation: [Wiki](https://github.com/yourusername/data-alchemist/wiki)
+
+## 🙏 Acknowledgments
+
+- Google Gemini AI for powering our intelligent features
+- Material-UI team for the excellent component library
+- Open source community for the amazing tools and libraries
+
+---
+
+<div align="center">
+
+**⭐ Star this repository if you found it helpful! ⭐**
+
+Made with ❤️ by [Your Name]
+
+[🌐 Live Demo](https://your-demo-url.com) • [📖 Documentation](https://docs.your-app.com) • [🐛 Report Bug](https://github.com/yourusername/data-alchemist/issues)
+
+</div>

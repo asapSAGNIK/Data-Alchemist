@@ -1,0 +1,5 @@
+ClientID,ClientName,PriorityLevel,RequestedTaskIDs,GroupTag,AttributesJSON
+1,ClientA,5,"T1,T2",GroupAlpha,"{\"location\":\"NY\"}"
+2,ClientB,3,"T3",GroupBeta,"{\"budget\":1000}"
+3,ClientC,4,"T1,T4",GroupAlpha,"{\"industry\":\"tech\"}"
+4,ClientD,2,"T5",GroupGamma,"{}"

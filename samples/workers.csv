@@ -1,0 +1,5 @@
+WorkerID,WorkerName,Skills,AvailableSlots,MaxLoadPerPhase,WorkerGroup,QualificationLevel
+101,WorkerX,"frontend,backend","1,3,5",8,TeamA,Senior
+102,WorkerY,frontend,"2,4",6,TeamB,Junior
+103,WorkerZ,devops,"1,2,3",10,TeamA,Mid
+104,WorkerW,backend,"4,5",7,TeamB,Senior

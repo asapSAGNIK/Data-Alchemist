@@ -19,7 +19,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
     const parsed = JSON.parse(cleanedText);
     console.log('[DEBUG] Direct JSON parse successful:', parsed);
     return parsed;
-  } catch (e) {
+  } catch {
     console.log('[DEBUG] Direct JSON parse failed, trying other strategies');
   }
 
@@ -30,8 +30,8 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
       const parsed = JSON.parse(codeBlockMatch[1].trim());
       console.log('[DEBUG] Markdown extraction successful:', parsed);
       return parsed;
-    } catch (e) {
-      console.log('[DEBUG] Markdown extraction failed:', e.message);
+    } catch (error) {
+      console.log('[DEBUG] Markdown extraction failed:', error instanceof Error ? error.message : String(error));
     }
   }
 
@@ -43,8 +43,8 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
       const parsed = JSON.parse(content);
       console.log('[DEBUG] Multi-line markdown extraction successful:', parsed);
       return parsed;
-    } catch (e) {
-      console.log('[DEBUG] Multi-line markdown extraction failed:', e.message);
+    } catch (error) {
+      console.log('[DEBUG] Multi-line markdown extraction failed:', error instanceof Error ? error.message : String(error));
     }
   }
 
@@ -55,7 +55,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
       const parsed = JSON.parse(jsonMatch[0]);
       console.log('[DEBUG] Simple JSON extraction successful:', parsed);
       return parsed;
-    } catch (e) {
+    } catch {
       console.log('[DEBUG] Simple JSON extraction failed');
     }
   }
@@ -68,7 +68,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
       const result = { clientsData: clientsArray };
       console.log('[DEBUG] ClientsData pattern extraction successful:', result);
       return result;
-    } catch (e) {
+    } catch {
       console.log('[DEBUG] ClientsData pattern extraction failed');
     }
   }
@@ -80,7 +80,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
       const result = { workersData: workersArray };
       console.log('[DEBUG] WorkersData pattern extraction successful:', result);
       return result;
-    } catch (e) {
+    } catch {
       console.log('[DEBUG] WorkersData pattern extraction failed');
     }
   }
@@ -92,7 +92,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
       const result = { tasksData: tasksArray };
       console.log('[DEBUG] TasksData pattern extraction successful:', result);
       return result;
-    } catch (e) {
+    } catch {
       console.log('[DEBUG] TasksData pattern extraction failed');
     }
   }
@@ -217,13 +217,13 @@ Response (valid JSON only):`;
     // Provide better suggestions based on available data
     let suggestion = 'Try being more specific.';
     if (clientsData.length > 0) {
-      const clientIds = clientsData.map(c => c.ClientID).slice(0, 3).join(', ');
+      const clientIds = clientsData.map((c: Record<string, unknown>) => c.ClientID).slice(0, 3).join(', ');
       suggestion = `Available Client IDs: ${clientIds}. Try: "Change client ${clientsData[0].ClientID} priority to 5"`;
     } else if (workersData.length > 0) {
-      const workerIds = workersData.map(w => w.WorkerID).slice(0, 3).join(', ');
+      const workerIds = workersData.map((w: Record<string, unknown>) => w.WorkerID).slice(0, 3).join(', ');
       suggestion = `Available Worker IDs: ${workerIds}. Try: "Set worker ${workersData[0].WorkerID} max load to 10"`;
     } else if (tasksData.length > 0) {
-      const taskIds = tasksData.map(t => t.TaskID).slice(0, 3).join(', ');
+      const taskIds = tasksData.map((t: Record<string, unknown>) => t.TaskID).slice(0, 3).join(', ');
       suggestion = `Available Task IDs: ${taskIds}. Try: "Set task ${tasksData[0].TaskID} duration to 3"`;
     }
     

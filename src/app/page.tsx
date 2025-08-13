@@ -729,7 +729,7 @@ export default function Home() {
               } else {
                 errors.push(`Row ${rowIndex + 1} (TaskID: ${row.TaskID || 'N/A'}): Malformed PreferredPhases array.`);
               }
-            } catch (e) {
+            } catch {
               errors.push(`Row ${rowIndex + 1} (TaskID: ${row.TaskID || 'N/A'}): Malformed PreferredPhases JSON array.`);
             }
           } else if (/^\\d+-\\d+$/.test(phasesString)) {
@@ -865,7 +865,7 @@ export default function Home() {
         if (Array.isArray(parsedArray) && parsedArray.every(p => typeof p === 'number')) {
           normalizedPhases = parsedArray;
         }
-      } catch (e) { /* silent fail, error handled in validateSingleDataset */ }
+      } catch { /* silent fail, error handled in validateSingleDataset */ }
     } else if (/^\\d+-\\d+$/.test(phasesString)) {
       const [start, end] = phasesString.split('-').map(Number);
       if (!isNaN(start) && !isNaN(end) && start <= end) {
@@ -915,7 +915,7 @@ export default function Home() {
   };
 
   // Placeholder for Circular co-run groups - requires rule parsing from Milestone 2
-  const validateCircularCoRunGroups = (tasks: DataWithId[]) => {
+  const validateCircularCoRunGroups = (_tasks: DataWithId[]) => {
     const errors: string[] = [];
     // This validation requires the rules structure from Milestone 2 (Co-run rules).
     // For now, it's a placeholder.
@@ -923,7 +923,7 @@ export default function Home() {
   };
 
   // Placeholder for Conflicting rules vs. phase-window constraints - requires rule parsing from Milestone 2
-  const validateConflictingRules = (tasks: DataWithId[]) => {
+  const validateConflictingRules = (_tasks: DataWithId[]) => {
     const errors: string[] = [];
     // This validation requires the rules structure from Milestone 2.
     // For now, it's a placeholder.
@@ -935,19 +935,18 @@ export default function Home() {
     const keys = Object.keys(data[0]);
     const errorsForType = validationErrors[type] || [];
 
-    return keys.map((key) => ({
+    return keys.map((key): GridColDef => ({
       field: key,
       headerName: key.charAt(0).toUpperCase() + key.slice(1),
       flex: 1,
       editable: key !== 'id', // Allow editing for all columns except 'id'
-      cellClassName: (params: any) => {
+      cellClassName: (params) => {
         // Check if this cell has an error
-        const rowId = params.id;
-        const cellValue = params.value;
+        const rowId = params.id as number;
         // A very basic check: see if any error message includes this cell's value or related row ID
         const hasError = errorsForType.some(errorMsg =>
-          errorMsg.includes(`Row ${rowId + 1}`) || errorMsg.includes(`(ClientID: ${params.row.ClientID})`) ||
-          errorMsg.includes(`(WorkerID: ${params.row.WorkerID})`) || errorMsg.includes(`(TaskID: ${params.row.TaskID})`)
+          errorMsg.includes(`Row ${rowId + 1}`) || errorMsg.includes(`(ClientID: ${(params.row as DataWithId).ClientID})`) ||
+          errorMsg.includes(`(WorkerID: ${(params.row as DataWithId).WorkerID})`) || errorMsg.includes(`(TaskID: ${(params.row as DataWithId).TaskID})`)
         );
         return hasError ? 'error-cell' : '';
       },
@@ -1022,9 +1021,10 @@ export default function Home() {
     return newRow;
   };
 
-  const handleProcessRowUpdateError = (error: any) => {
+  const handleProcessRowUpdateError = (error: unknown) => {
     console.error("Row update error:", error);
-    toast.error(`Error updating row: ${error.message || "Unknown error"}`);
+    const message = error instanceof Error ? error.message : "Unknown error";
+    toast.error(`Error updating row: ${message}`);
   };
 
   const handleExportAllData = () => {
@@ -1036,7 +1036,7 @@ export default function Home() {
       prioritizationSettings: prioritizationSettings,
     };
 
-    const csvContent = Papa.unparse(dataToExport as any);
+    const csvContent = Papa.unparse(Object.values(dataToExport).flat());
     const blob = new Blob([csvContent], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

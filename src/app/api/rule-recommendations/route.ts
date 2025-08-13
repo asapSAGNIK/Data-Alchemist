@@ -5,7 +5,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
  * Robust JSON extraction from AI responses for rule recommendations
  * Handles AI responses that may contain extra text or formatting
  */
-function extractJSONFromAIResponse(text: string): Record<string, unknown> | null {
+function extractJSONFromAIResponse(text: string): unknown[] | null {
   if (!text || typeof text !== 'string') {
     return null;
   }
@@ -63,7 +63,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
         if (Array.isArray(parsed)) {
           return parsed;
         }
-      } catch (e) {
+      } catch {
         // Continue to next pattern
       }
     }

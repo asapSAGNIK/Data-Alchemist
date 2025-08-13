@@ -63,7 +63,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
         if (typeof parsed === 'object' && parsed !== null) {
           return parsed;
         }
-      } catch (e) {
+      } catch {
         // Continue to next pattern
       }
     }

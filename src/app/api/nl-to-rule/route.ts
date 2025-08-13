@@ -74,7 +74,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
   if (cleanedText.toLowerCase().includes('corun') || cleanedText.toLowerCase().includes('co-run')) {
     try {
       return { type: "coRun", tasks: ["T1", "T2"], note: "Extracted from: " + cleanedText };
-    } catch (e) {
+    } catch {
       // Continue
     }
   }

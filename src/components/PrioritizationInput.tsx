@@ -102,7 +102,7 @@ const PrioritizationInput: React.FC<PrioritizationInputProps> = ({ onSettingsCha
       <Box sx={{ maxHeight: '200px', overflow: 'auto', mb: 2 }}>
         {criteria.map((criterion) => (
           <Box key={criterion.id} sx={{ mb: 2 }}>
-            <Typography variant="caption" style={{ color: 'white', fontSize: '0.75rem', display: 'block', mb: 0.5 }}>
+            <Typography variant="caption" sx={{ color: 'white', fontSize: '0.75rem', display: 'block', mb: 0.5 }}>
               {criterion.name}: {priorities[criterion.id]}
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

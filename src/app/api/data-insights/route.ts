@@ -22,7 +22,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
     if (typeof parsed === 'object' && parsed !== null) {
       return parsed;
     }
-  } catch (_e) {
+  } catch {
     // If direct parsing fails, try to extract JSON from within the text
     const jsonRegex = /\{[\s\S]*\}/;
     const match = cleanText.match(jsonRegex);

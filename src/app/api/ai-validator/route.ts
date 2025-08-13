@@ -18,7 +18,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
     if (typeof parsed === 'object' && parsed !== null) {
       return parsed;
     }
-  } catch (e) {
+  } catch {
     // Continue to other strategies
   }
 
@@ -30,7 +30,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
       if (typeof parsed === 'object' && parsed !== null) {
         return parsed;
       }
-    } catch (e) {
+    } catch {
       // Continue to next strategy
     }
   }
@@ -43,7 +43,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
       if (typeof parsed === 'object' && parsed !== null) {
         return parsed;
       }
-    } catch (e) {
+    } catch {
       // Continue to next strategy
     }
   }
@@ -63,7 +63,7 @@ function extractJSONFromAIResponse(text: string): Record<string, unknown> | null
         if (typeof parsed === 'object' && parsed !== null) {
           return parsed;
         }
-      } catch (e) {
+      } catch {
         // Continue to next pattern
       }
     }

@@ -627,10 +627,10 @@ export default function Home() {
       if (maxConcurrencyErrors.length > 0) allErrors["tasks"] = [...(allErrors["tasks"] || []), ...maxConcurrencyErrors];
 
       // Placeholders for Milestone 2 validations
-      const circularCoRunErrors = validateCircularCoRunGroups(tasksData);
+      const circularCoRunErrors = validateCircularCoRunGroups();
       if (circularCoRunErrors.length > 0) allErrors["tasks"] = [...(allErrors["tasks"] || []), ...circularCoRunErrors];
 
-      const conflictingRulesErrors = validateConflictingRules(tasksData);
+      const conflictingRulesErrors = validateConflictingRules();
       if (conflictingRulesErrors.length > 0) allErrors["tasks"] = [...(allErrors["tasks"] || []), ...conflictingRulesErrors];
 
       setValidationErrors(allErrors);
@@ -915,7 +915,7 @@ export default function Home() {
   };
 
   // Placeholder for Circular co-run groups - requires rule parsing from Milestone 2
-  const validateCircularCoRunGroups = (_tasks: DataWithId[]) => {
+  const validateCircularCoRunGroups = () => {
     const errors: string[] = [];
     // This validation requires the rules structure from Milestone 2 (Co-run rules).
     // For now, it's a placeholder.
@@ -923,7 +923,7 @@ export default function Home() {
   };
 
   // Placeholder for Conflicting rules vs. phase-window constraints - requires rule parsing from Milestone 2
-  const validateConflictingRules = (_tasks: DataWithId[]) => {
+  const validateConflictingRules = () => {
     const errors: string[] = [];
     // This validation requires the rules structure from Milestone 2.
     // For now, it's a placeholder.
@@ -1002,10 +1002,10 @@ export default function Home() {
       if (maxConcurrencyErrors.length > 0) allErrors["tasks"] = [...(allErrors["tasks"] || []), ...maxConcurrencyErrors];
 
       // Placeholders for Milestone 2 validations
-      const circularCoRunErrors = validateCircularCoRunGroups(tasksData);
+      const circularCoRunErrors = validateCircularCoRunGroups();
       if (circularCoRunErrors.length > 0) allErrors["tasks"] = [...(allErrors["tasks"] || []), ...circularCoRunErrors];
 
-      const conflictingRulesErrors = validateConflictingRules(tasksData);
+      const conflictingRulesErrors = validateConflictingRules();
       if (conflictingRulesErrors.length > 0) allErrors["tasks"] = [...(allErrors["tasks"] || []), ...conflictingRulesErrors];
 
       console.log("[DEBUG] Validation results:", allErrors);

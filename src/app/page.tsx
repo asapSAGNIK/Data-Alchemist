@@ -940,7 +940,7 @@ export default function Home() {
       headerName: key.charAt(0).toUpperCase() + key.slice(1),
       flex: 1,
       editable: key !== 'id', // Allow editing for all columns except 'id'
-      cellClassName: (params) => {
+      cellClassName: (params: { id: string | number; row: DataWithId }) => {
         // Check if this cell has an error
         const rowId = params.id as number;
         // A very basic check: see if any error message includes this cell's value or related row ID
@@ -1036,7 +1036,7 @@ export default function Home() {
       prioritizationSettings: prioritizationSettings,
     };
 
-    const csvContent = Papa.unparse(Object.values(dataToExport).flat());
+    const csvContent = Papa.unparse(Object.values(dataToExport).flat() as unknown[]);
     const blob = new Blob([csvContent], { type: 'text/csv' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
